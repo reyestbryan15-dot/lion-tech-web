@@ -3,14 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
+"scripts": {
+    "liontech": "node -e \"console.clear(); console.log('\\x1b[1m\\x1b[36m%s\\x1b[0m', '🚀 BIENVENIDO AL PROYECTO LIONTECH V2'); console.log('\\x1b[32m%s\\x1b[0m', '🛡️ Escudo Anti-Ataques Cibernéticos Activado en Terminal...');\" && vite --port 2324 --host --clearScreen false",
+
+    "subir": "git add . && node -e \"const readline = require('readline').createInterface({input: process.stdin, output: process.stdout}); readline.question('¿Qué mensaje quieres poner en la actualización?: ', (msg) => { require('child_process').execSync(`git commit -m \\\"${msg}\\\" && git push`, {stdio: 'inherit'}); readline.close(); })\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.93.3",
+    "firebase": "^12.14.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

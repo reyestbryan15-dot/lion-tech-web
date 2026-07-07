@@ -1,4 +1,9 @@
-# Logs
+# =========================================================================
+# LION TECH V2 - CONFIGURACIÓN DE SEGURIDAD EN GIT
+# =========================================================================
+
+# 1. Logs de errores del sistema
+# Evitan que se suban los reportes de fallos temporales de la terminal
 logs
 *.log
 npm-debug.log*
@@ -7,12 +12,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# 2. Carpetas de Dependencias y Compilación
+# node_modules contiene gigabytes de librerías; jamás se debe subir.
+# dist es la carpeta que genera Vite al compilar.
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# 3. Directorios del Editor de Código (IDE)
+# Evita guardar configuraciones visuales de tu Visual Studio Code personal
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,5 +32,20 @@ dist-ssr
 *.sln
 *.sw?
 
-# ocultar el .env
+# =========================================================================
+# 4. ARCHIVOS CRÍTICOS Y CLAVES DE SEGURIDAD (.gitignore)
+# -------------------------------------------------------------------------
+# Explicación para Bryan: Aquí resguardamos el archivo de variables (.env)
+# y dejamos lista la regla para ocultar cualquier script personalizado de seguridad
+# o de defensa contra ataques informáticos que creemos para el Admin Panel en el futuro.
+# =========================================================================
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Scripts personalizados de seguridad de Lion Tech
+/scripts/seguridad/
+*personalizacion*
+*attack-check*
