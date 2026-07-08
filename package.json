@@ -1,12 +1,25 @@
 {
   "name": "lion-tecj",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/bryanreyesat-dotcom/lion-tech-web#readme",
+  "bugs": {
+    "url": "https://github.com/bryanreyesat-dotcom/lion-tech-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanreyesat-dotcom/lion-tech-web.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+
 "scripts": {
     "liontech": "node -e \"console.clear(); console.log('\\x1b[1m\\x1b[36m%s\\x1b[0m', '🚀 BIENVENIDO AL PROYECTO LIONTECH V2'); console.log('\\x1b[32m%s\\x1b[0m', '🛡️ Escudo Anti-Ataques Cibernéticos Activado en Terminal...');\" && vite --port 2324 --host --clearScreen false",
-
     "subir": "git add . && node -e \"const readline = require('readline').createInterface({input: process.stdin, output: process.stdout}); readline.question('¿Qué mensaje quieres poner en la actualización?: ', (msg) => { require('child_process').execSync(`git commit -m \\\"${msg}\\\" && git push`, {stdio: 'inherit'}); readline.close(); })\"",
+  "main": "eslint.config.js",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
